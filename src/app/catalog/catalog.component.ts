@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogComponent implements OnInit {
 
-  constructor() { }
+  constructor() { };
 
   ngOnInit(): void {
+  };
+
+  openDetails(){
+
   }
 
 }
