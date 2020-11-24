@@ -1,0 +1,40 @@
+.product-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.product-item{
+    margin:10px;
+    width:15%;
+    height:100%;
+
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .product-item{
+        width: 35%;
+    }
+  }
+
+.product-image{
+    width: 90%;
+}
+
+.product-content{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.product-add{
+    text-align: center;
+    padding:10px;
+    font-size: 12px;
+}
