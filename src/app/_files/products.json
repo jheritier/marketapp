@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Fendant de St-Léonard",
+        "description": "",
+        "price": "14.00",
+        "imageUrl": ""
+    },
+    {
+        "id": 2,
+        "name": "Petite Arvine",
+        "description": "",
+        "price": "20.00",
+        "imageUrl": ""
+    },
+    {
+        "id": 3,
+        "name": "Pinot noir",
+        "description": "",
+        "price": "21.00",
+        "imageUrl": ""
+    },
+    {
+        "id": 4,
+        "name": "Gamay",
+        "description": "",
+        "price": "15.00",
+        "imageUrl": ""
+    },
+    {
+        "id": 5,
+        "name": "Syrah",
+        "description": "",
+        "price": "20.00",
+        "imageUrl": ""
+    },
+    {
+        "id": 6,
+        "name": "Païen",
+        "description": "",
+        "price": "17.00",
+        "imageUrl": ""
+    }
+]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import products from './_files/products.json';
 
 @Component({
   selector: 'app-catalog',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class CatalogComponent implements OnInit {
 
   constructor() { };
+
+  public productList:{name:string, price:string}[] = products;
 
   ngOnInit(): void {
   };

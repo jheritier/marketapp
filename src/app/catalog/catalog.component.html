@@ -1,53 +1,7 @@
 <div class="product-grid">
-    <div class="product-item">
+    <div class="product-item" *ngFor="let products of products">
         <img src="../assets/img/gamay.jpg" class="product-image">
-        <div class="product-content">Gamay</div>
+        <div class="product-content">{{products.name}}</div>
         <div class="product-add" (click)="openDetails()">Ajouter</div>
     </div>
-    <div class="product-item">
-        <img src="../assets/img/muscat.jpg" class="product-image">
-        <div class="product-content">Muscat</div>
-        <div class="product-add" (click)="openDetails()">Ajouter</div>
-    </div>
-    <div class="product-item">
-        <img src="../assets/img/idole.jpg" class="product-image">
-        <div class="product-content">Idole</div>
-        <div class="product-add">Ajouter</div>
-    </div>
-    <div class="product-item">
-        <img src="../assets/img/paien-batasse.jpg" class="product-image">
-        <div class="product-content">Gamay</div>
-        <div class="product-add">Ajouter</div>
-    </div>
-    <div class="product-item">
-        <img src="../assets/img/gamay.jpg" class="product-image">
-        <div class="product-content">Gamay</div>
-        <div class="product-add">Ajouter</div>
-    </div>
-    <div class="product-item">
-        <img src="../assets/img/gamay.jpg" class="product-image">
-        <div class="product-content">Gamay</div>
-        <div class="product-add">Ajouter</div>
-    </div>
-    <div class="product-item">
-        <img src="../assets/img/gamay.jpg" class="product-image">
-        <div class="product-content">Gamay</div>
-        <div class="product-add">Ajouter</div>
-    </div>
-    <div class="product-item">
-        <img src="../assets/img/gamay.jpg" class="product-image">
-        <div class="product-content">Gamay</div>
-        <div class="product-add">Ajouter</div>
-    </div>
-    <div class="product-item">
-        <img src="../assets/img/gamay.jpg" class="product-image">
-        <div class="product-content">Gamay</div>
-        <div class="product-add">Ajouter</div>
-    </div>
-    <div class="product-item">
-        <img src="../assets/img/gamay.jpg" class="product-image">
-        <div class="product-content">Gamay</div>
-        <div class="product-add">Ajouter</div>
-    </div>
-    
 </div>
