@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,11 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([
+      { path: '', component: CatalogComponent },
+      { path: 'products/:productId', component: ArticleDetailsComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

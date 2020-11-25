@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import products from './_files/products.json';
+import products from '../_files/products.json';
 
 @Component({
   selector: 'app-catalog',
@@ -8,15 +8,11 @@ import products from './_files/products.json';
 })
 export class CatalogComponent implements OnInit {
 
-  constructor() { };
-
   public productList:{name:string, price:string}[] = products;
+  
+  constructor() { };
 
   ngOnInit(): void {
   };
-
-  openDetails(){
-
-  }
 
 }

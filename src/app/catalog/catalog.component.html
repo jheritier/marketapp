@@ -1,7 +1,7 @@
-<div class="product-grid">
-    <div class="product-item" *ngFor="let products of products">
+<div class="row g-3">
+    <div class="col-5 col-lg-2 col-md-3 product-item" *ngFor="let products of productList; index as productId">
         <img src="../assets/img/gamay.jpg" class="product-image">
         <div class="product-content">{{products.name}}</div>
-        <div class="product-add" (click)="openDetails()">Ajouter</div>
+        <div class="" routerLink="['/products', productId]">Ajouter</div>
     </div>
 </div>
