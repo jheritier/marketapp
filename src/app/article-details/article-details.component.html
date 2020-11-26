@@ -1,17 +1,16 @@
-<div class="article" *ngIf="productList">
-    <div class="article-details">
+<div class="article" *ngIf="product">
+    <div class="article-infos">
         <img src="../assets/img/gamay.jpg" class="article-image">
-        <div class="article-content">
-        {{product.name}}   
-        </div>
+        <div class="article-content">{{product.name}}</div>
     </div>
 
-    <select class="form-control variant">
-        <option>{{product.price}}</option>
-      </select>
+    <div class="article-details">
+        <select class="variant">
+            <option>75 cl - {{product.price}}</option>
+            <option>50 cl - {{product.price}}</option>
+            </select>
 
-    <div class="quantity">
-        0
+        <div class="quantity">1</div>
     </div>
 
 </div>
