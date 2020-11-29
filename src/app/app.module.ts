@@ -11,7 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
   declarations: [
     AppComponent,
     CatalogComponent,
-    ArticleDetailsComponent
+    ArticleDetailsComponent,
   ],
   imports: [
     BrowserModule,

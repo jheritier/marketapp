@@ -1,7 +1,16 @@
-<div class="row g-3">
-    <div class="col-5 col-lg-2 col-md-3 product-item" *ngFor="let products of productList; index as productId">
-        <img src="../assets/img/gamay.jpg" class="product-image">
-        <div class="product-content">{{products.name}}</div>
-        <div class="" [routerLink]="['/article-details', productId]">Ajouter</div>
+<div class="">
+    <div class="">Recherche</div>
+    <div class="">Filtre</div>
+    <div class="">0</div>
+
+
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 col-lg-2 col-md-3 product-item" *ngFor="let products of productList; index as productId">
+            <img src="../assets/img/gamay.jpg" class="product-image">
+            <div class="product-content">{{products.name}}</div>
+            <div class="" [routerLink]="['/article-details', productId]">Ajouter</div>
+        </div>
     </div>
 </div>
