@@ -1,14 +1,18 @@
-<div class="">
-    <div class="">Recherche</div>
-    <div class="">Filtre</div>
-    <div class="">0</div>
+
+<nav class="navbar navbar">
+    <div class="nav-logo"><img src="../assets/img/logo.png" class="nav-img"></div>
+    <div class="nav-item">
+        <div class="search">Recherche</div>
+        <div class="filter">Filtre</div>
+        <div class="cart">0</div>
+    </div>
+</nav>
 
 
-</div>
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container-fluid">
+    <div class="row">
         <div class="col-5 col-lg-2 col-md-3 product-item" *ngFor="let products of productList; index as productId">
-            <img src="../assets/img/gamay.jpg" class="product-image">
+            <img src="../assets/img/gamay.jpg" class="product-img">
             <div class="product-content">{{products.name}}</div>
             <div class="" [routerLink]="['/article-details', productId]">Ajouter</div>
         </div>
