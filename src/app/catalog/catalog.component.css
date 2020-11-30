@@ -1,26 +1,61 @@
-.navbar{
-    background-color: #292C30;
-    height: 100px;
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
+.nav{
+    background-color: #ffffff;
+    height: 80px;
+    width: 100%;
+    color: indianred;
+    display: flex;
+
+    align-items: center;
+    padding-left: 5%;
+    justify-content: space-between;
+
+}
+.nav-logo{
+    display: inline-block;
 }
 
-.nav-logo{
-    height: 100%;
+.main-nav{
+    display: flex;
+    width: 80%;   
+    
 }
 
 .nav-img{
     width: 50px;
-
 }
 .nav-item{
-    display:flex;
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: #f3f3f4;
 }
+
+.search-input{
+    font-weight: 300;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    width: 60%;
+    height: 35px;
+    padding: 20px;
+    background-color: #F3F3F4;
+    color: #9E9EA7;
+}
+
+.search-input:focus{
+    background-color: #ffffff;
+    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 
 .product-list{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 
 .product-item{
 
