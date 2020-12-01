@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  hideContent : boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showDetails(){
+    this.hideContent = !this.hideContent;
   }
 
 }

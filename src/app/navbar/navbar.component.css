@@ -23,12 +23,20 @@
 .nav-img{
     width: 50px;
 }
+
+.nav-icons{
+    width: 25px;
+        
+}
 .nav-item{
     margin-left: 10px;
     height: 40px;
     width: 40px;
+    text-align: center;
+    padding-top: 7px;
     border-radius: 10px;
     background-color: #f3f3f4;
+    
 }
 
 .search-input{
@@ -49,30 +57,29 @@
 }
 
 .filter-list{
-    display: block;
     position: relative;
-
-    width: 100%;
 
     padding-top:20px;
     padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
 
     background-color: #ffffff;
 }
 
-.filter-list label{
+label{
     font-weight: bold;
 }
 
-.filter-list select{
+select{
     border-radius: 10px;
     color: #9E9EA7;
     font-weight: 300;
+
+    width: 30%;
 }
 
-.filter-list select:focus{
+select:focus{
     border: none;
     transition: border 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -80,4 +87,17 @@
 .filter-list option{
     margin-top:10px;
     font-weight: 300;
+    background-color: #ffffff;
+    border:none;
 }
+
+option::selection{
+    color:#9E9EA7;
+}
+
+
+@media (max-width: 1000px) {
+    select {
+       width: 100%;
+    }
+  }

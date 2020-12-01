@@ -1,3 +1,14 @@
+.main-catalog{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top: 20px;
+
+}
+
 .product-list{
     display: flex;
     justify-content: space-between;
@@ -24,14 +35,6 @@
 .product-add{
     text-align: center;
     font-size: 12px;
-}
-
-.main-catalog{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
-    grid-gap: 10px;
-    grid-auto-flow: dense;
-    margin:10px
 }
 
 @media (max-width: 1000px) {
