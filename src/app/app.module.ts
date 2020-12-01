@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CatalogComponent,
     ArticleDetailsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

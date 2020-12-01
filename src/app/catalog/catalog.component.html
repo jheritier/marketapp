@@ -1,20 +1,6 @@
-
-<div class="nav">
-    <div class="nav-logo"><img src="../assets/img/logo.png" class="nav-img"></div>
-        <div class="main-nav">
-            <input type="search" class="form-control search-input" placeholder="Recherche">
-            <div class="filter nav-item">Filtre</div>
-            <div class="cart nav-item">0</div>
-        </div>
-</div>
-
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-5 col-lg-2 col-md-3 product-item" *ngFor="let products of productList; index as productId">
-            <img src="../assets/img/gamay.jpg" class="product-img">
-            <div class="product-content">{{products.name}}</div>
-            <div class="" [routerLink]="['/article-details', productId]">Ajouter</div>
-        </div>
+<div class="main-catalog">
+    <div class="product-item" *ngFor="let products of productList; index as productId" [routerLink]="['/article-details', productId]">
+        <img src="../assets/img/gamay.jpg" class="product-img">
+        <div class="product-content">{{products.name}}</div>
     </div>
 </div>
