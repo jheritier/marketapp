@@ -12,6 +12,7 @@
 }
 .nav-logo{
     display: inline-block;
+    outline:none;
 }
 
 .main-nav{

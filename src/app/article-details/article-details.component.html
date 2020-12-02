@@ -1,16 +1,26 @@
 <div class="article" *ngIf="product">
     <div class="article-infos">
         <img src="../assets/img/gamay.jpg" class="article-image">
-        <div class="article-content">{{product.name}}</div>
+        
+
+        <div class="article-details">
+            <div class="article-content">{{product.name}}</div>
+
+            <div class="variant-list">
+                <div class="variant-name">Contenance</div>
+                <div class="variant-item-list">
+                    <div class="variant-item">50cl</div>
+                    <div class="variant-item">75cl</div>
+                </div>
+            </div>
+
+            <div class="quantity">
+                <input class="form-control quantityValue" type="text" placeholder="0">
+                <div class="quantityM">-</div>
+                <span class="quantityM">+</span>
+            </div>
+
+            <button>Ajouter</button>
+        </div>
     </div>
-
-    <div class="article-details">
-        <select class="form-control">
-            <option>75 cl - {{product.price}}</option>
-            <option>50 cl - {{product.price}}</option>
-            </select>
-
-        <div class="quantity">1</div>
-    </div>
-
 </div>
