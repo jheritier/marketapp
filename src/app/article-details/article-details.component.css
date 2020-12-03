@@ -2,31 +2,37 @@
 .article{
     margin-left:5%;
     margin-right:5%;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .article-infos{
     padding:10px;
 
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 10px;
 
     display: flex;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .article-image{
-    width: 40%;
+    object-fit: cover;
+    width: 15%;
+    
 }
 
 .article-details{
     margin-left: 100px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .article-content{
     font-size: 30px;
     padding-top:30px;
+
+    font-family: 'Inter';
+    font-weight: 600;
 }
 
 .variant-list{
@@ -62,40 +68,18 @@
 }
 
 .quantity{
+    display:block;
+    margin-top: 50px;
+}
+
+.quantityLabel{
     display:flex;
-    margin-top: 50px;
+    margin-bottom: 5px;
 }
 
-
-
-button{
-
-    margin-top: 50px;
-
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    height:50px;
-    font-weight: 300;
+.quantityChooser{
+    display: flex;
 }
-
-
-@media screen and (max-width: 900px) {
-    .article-infos{
-        width: 100%;
-        display: block;
-    }
-
-    select{
-        width:100%;
-    }
-
-    .article-details{
-        margin-left: 10px;
-        margin-top: 30px;
-    }
-}
-
 
 .quantityM-left{
     border-left:solid 1px #F0E9F1;
@@ -105,7 +89,7 @@ button{
     border-radius: 50px 0px 0px 50px;
 
     height: 50px;
-    width: 80px;
+    width: 100px;
 
     justify-content: center;
     align-items: center;
@@ -123,7 +107,7 @@ button{
     border-radius: 0px 50px 50px 0px;
 
     height: 50px;
-    width: 80px;
+    width: 100px;
 
     justify-content: center;
     align-items: center;
@@ -148,13 +132,52 @@ button{
     font-size: 20px;
     font-weight: 300;
 
-    background-color: #F3F3F4;
+
     color: #000000;
+    background-color: #F3F3F4;
+}
+
+
+button{
+
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 8px;
+    outline: none;
+
+    width: 100%;
+    height:50px;
     
+    font-weight: 300;
 }
 
-.quantityValue:focus{
-    background-color: #ffffff;
-    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+@media screen and (max-width: 900px) {
+    .article-infos{
+        width: 100%;
+        display: block;
+    }
+
+    select{
+        width:100%;
+    }
+
+    .article-details{
+        margin:10px;
+        margin-top: 30px;
+    }
+    .article-image{
+        width: 60%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
 }
 
+@media screen and (max-width: 600px) {
+    .article-image{
+        width: 100%;
+    }
+
+}

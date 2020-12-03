@@ -5,7 +5,7 @@
     grid-auto-flow: dense;
     margin-left:5%;
     margin-right:5%;
-    margin-top: 20px;
+    margin-top: 50px;
 
 }
 
@@ -30,6 +30,10 @@
     padding-top: 20px;
     font-size: 20px;
 
+}
+
+.product-price{
+    font-size:13px;
 }
 
 .product-add{

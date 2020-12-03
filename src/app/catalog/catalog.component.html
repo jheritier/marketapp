@@ -1,6 +1,7 @@
 <div class="main-catalog">
-    <div class="product-item" *ngFor="let products of productList; index as productId" [routerLink]="['/article-details', productId]">
+    <div class="product-item" *ngFor="let product of productList; index as productId" [routerLink]="['/article-details', productId]">
         <img src="../assets/img/gamay.jpg" class="product-img">
-        <div class="product-content">{{products.name}}</div>
+        <div class="product-content">{{product.name}}</div>
+        <div class="product-price">{{product.price}}</div>
     </div>
 </div>
