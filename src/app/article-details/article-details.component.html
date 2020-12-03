@@ -5,6 +5,7 @@
 
         <div class="article-details">
             <div class="article-content">{{product.name}}</div>
+            {{product.price}} .-
 
             <div class="variant-list">
                 <div class="variant-name">Contenance</div>
@@ -15,9 +16,9 @@
             </div>
 
             <div class="quantity">
-                <input class="form-control quantityValue" type="text" placeholder="0">
-                <div class="quantityM">-</div>
-                <span class="quantityM">+</span>
+                <div class="quantityM-left">-</div>
+                <input class="quantityValue" type="text" placeholder="0">
+                <span class="quantityM-right">+</span>
             </div>
 
             <button>Ajouter</button>

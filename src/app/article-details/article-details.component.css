@@ -2,32 +2,25 @@
 .article{
     margin-left:5%;
     margin-right:5%;
-    margin-top: 20px;    
+    margin-top: 20px;
 }
 
 .article-infos{
-    margin-left: auto;
-    margin-right: auto;
-
     padding:10px;
 
     background-color: #ffffff;
     border-radius: 20px;
-    width: 80%;
-    
-    padding-bottom: 20px;
 
     display: flex;
-
+    justify-content: center;    
 }
 
 .article-image{
-    width: 50%;
-    height: 50%;
+    width: 40%;
 }
 
 .article-details{
-    margin-left: 10px;
+    margin-left: 100px;
     margin-top: 30px;
 }
 
@@ -70,18 +63,67 @@
 
 .quantity{
     display:flex;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 
 
-.quantityM{
-    border:solid 1px #F0E9F1;
+button{
+
+    margin-top: 50px;
+
+    border: none;
     border-radius: 8px;
+    width: 100%;
+    height:50px;
+    font-weight: 300;
+}
+
+
+@media screen and (max-width: 900px) {
+    .article-infos{
+        width: 100%;
+        display: block;
+    }
+
+    select{
+        width:100%;
+    }
+
+    .article-details{
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+}
+
+
+.quantityM-left{
+    border-left:solid 1px #F0E9F1;
+    border-top:solid 1px #F0E9F1;
+    border-bottom:solid 1px #F0E9F1;
+
+    border-radius: 50px 0px 0px 50px;
 
     height: 50px;
     width: 80px;
-    margin-right: 5px;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.quantityM-right{
+    border-right:solid 1px #F0E9F1;
+    border-top:solid 1px #F0E9F1;
+    border-bottom:solid 1px #F0E9F1;
+
+    border-radius: 0px 50px 50px 0px;
+
+    height: 50px;
+    width: 80px;
 
     justify-content: center;
     align-items: center;
@@ -94,12 +136,12 @@
 .quantityValue{
     height:50px;
     width: 100px;
-    margin-right: 5px;
 
     text-align: center;
-    border-radius: 8px;
-    
+
     border:none;
+    border-top:solid 1px #F0E9F1;
+    border-bottom:solid 1px #F0E9F1;
     
     outline: none;
     
@@ -107,7 +149,7 @@
     font-weight: 300;
 
     background-color: #F3F3F4;
-    color: #9E9EA7;
+    color: #000000;
     
 }
 
@@ -116,40 +158,3 @@
     transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-button{
-
-    margin-top: 20px;
-
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    height:50px;
-    font-weight: 300;
-}
-
-
-@media screen and (max-width: 900px) {
-    .article-image{
-        width: 60%;
-    }
-    .article-content{
-        text-align: center;
-    }
-    .article-infos{
-        width: 100%;
-    }
-
-    select{
-        width:100%;
-    }
-
-    .article-infos{
-        display: block;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .article-image{
-        width: 80%;
-    }
-}
