@@ -36,6 +36,7 @@
     padding-top: 7px;
     border-radius: 10px;
     background-color: #f3f3f4;
+    outline: none;
     
 }
 
@@ -102,3 +103,7 @@ option::selection{
        width: 100%;
     }
   }
+
+option{
+    background-color: blue;
+}

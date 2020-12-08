@@ -7,6 +7,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     CatalogComponent,
     ArticleDetailsComponent,
     NavbarComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     RouterModule.forRoot([
       { path: '', component: CatalogComponent },
       { path: 'article-details/:productId', component: ArticleDetailsComponent },
+      { path: 'checkout', component: CheckoutComponent },
     ])
   ],
   providers: [],
