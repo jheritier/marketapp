@@ -45,5 +45,52 @@
                 <div class="total-amount">120.-</div>
             </div>
         </div>
+        <div class="btn">
+            <button class="btn-checkout">LIVRAISON 	&#x2192;</button>
+        </div>
+    </div>
+
+
+
+    <div class="main-checkout">
+        <div class="checkout-title">Livraison</div>
+        <div class="item-list">
+            <div class="item">
+                <div class="item-row delivery-option">
+                    <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="deliverytoday">
+                    Emporté aujourd'hui
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-row delivery-option">
+                    <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="deliverytoday">
+                    A livrer par transporteur
+                    <div class="additionalAmount">+ 09.00.-</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-row delivery-option">
+                    <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="deliverytoday">
+                    Récupération ultérieure à la cave
+                    <div class="calendar"><input [matDatepicker]="basicDatepicker">
+                        <mat-datepicker-toggle [for]="basicDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #basicDatepicker></mat-datepicker></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-box">
+            <div class="item-row">
+                <div class="subtotal-label">Sous-Total</div>
+                <div class="subtotal-amount">120.-</div>
+            </div>
+            <div class="item-row total">
+                <div class="total-label">Total</div>
+                <div class="total-amount">120.-</div>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="btn-checkout">COORDONNEES 	&#x2192;</button>
+        </div>
     </div>
 </div>

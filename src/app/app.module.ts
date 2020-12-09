@@ -8,6 +8,10 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -24,9 +28,16 @@ import { CheckoutComponent } from './checkout/checkout.component';
       { path: '', component: CatalogComponent },
       { path: 'article-details/:productId', component: ArticleDetailsComponent },
       { path: 'checkout', component: CheckoutComponent },
-    ])
+    ]),
+    NgbModule,
+    NoopAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
