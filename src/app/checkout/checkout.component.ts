@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DateAdapter } from '@angular/material/core';
+
 
 @Component({
   selector: 'app-checkout',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  minDate = new Date();
+
+  constructor(private dateAdapter: DateAdapter<Date>) {
+    this.dateAdapter.setLocale('FR-CH'); 
+  }
 
   ngOnInit(): void {
   }

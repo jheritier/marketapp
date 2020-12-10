@@ -65,16 +65,18 @@
                 <div class="item-row delivery-option">
                     <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="deliverytoday">
                     A livrer par transporteur
-                    <div class="additionalAmount">+ 09.00.-</div>
+                    <div class="additionalAmount">+ 9.-</div>
                 </div>
             </div>
             <div class="item">
                 <div class="item-row delivery-option">
                     <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="deliverytoday">
                     Récupération ultérieure à la cave
-                    <div class="calendar"><input [matDatepicker]="basicDatepicker">
-                        <mat-datepicker-toggle [for]="basicDatepicker"></mat-datepicker-toggle>
-                        <mat-datepicker #basicDatepicker></mat-datepicker></div>
+                    <div class="calendar">
+                        <input matInput [matDatepicker]="picker" [min]="minDate" class="form-control">
+                        <mat-datepicker-toggle matSuffix [for]="picker" class="calendar-icon"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,13 +86,83 @@
                 <div class="subtotal-label">Sous-Total</div>
                 <div class="subtotal-amount">120.-</div>
             </div>
+            <div class="item-row">
+                <div class="subtotal-label">Livraison</div>
+                <div class="subtotal-amount">9.-</div>
+            </div>
             <div class="item-row total">
                 <div class="total-label">Total</div>
-                <div class="total-amount">120.-</div>
+                <div class="total-amount">129.-</div>
             </div>
         </div>
         <div class="btn">
             <button class="btn-checkout">COORDONNEES 	&#x2192;</button>
+        </div>
+    </div>
+
+    <div class="main-checkout">
+        <div class="checkout-title">Coordonnées</div>
+        <div class="item-list">
+            <div class="item">
+                <div class="coordgroup">
+                    <div class="firstname">
+                        <label>Prénom</label>
+                        <input type="text" class="form-control coordform">
+                    </div>
+                    <div class="name">
+                    <label>Nom</label>
+                    <input type="text" class="form-control coordform">
+                    </div>
+                </div>
+                <div class="coordgroup">
+                    <div class="firstname">
+                        <label>Adresse</label>
+                        <input type="text" class="form-control coordform">
+                    </div>
+                    <div class="firstname">
+                        <label>Adresse 2</label>
+                        <input type="text" class="form-control coordform">
+                    </div>
+                </div>
+                <div class="coordgroup">
+                    <div class="npa">
+                        <label>NPA</label>
+                        <input type="text" class="form-control coordform">
+                    </div>
+                    <div class="city">
+                        <label>Ville</label>
+                        <input type="text" class="form-control coordform">
+                    </div>
+                </div>
+                <div class="coordgroup">
+                    <div class="firstname">
+                        <label>Email</label>
+                        <input type="email" class="form-control coordform">
+                    </div>
+                    <div class="firstname">
+                        <label>Téléphone</label>
+                        <input type="phone" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-box">
+            <div class="item-row">
+                <div class="subtotal-label">Sous-Total</div>
+                <div class="subtotal-amount">120.-</div>
+            </div>
+            <div class="item-row">
+                <div class="subtotal-label">Livraison</div>
+                <div class="subtotal-amount">9.-</div>
+            </div>
+            <div class="item-row total">
+                <div class="total-label">Total</div>
+                <div class="total-amount">129.-</div>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="btn-checkout">PAIEMENT 	&#x2192;</button>
         </div>
     </div>
 </div>

@@ -164,3 +164,31 @@
     padding-left:20px;
     vertical-align: baseline;
 }
+
+.calendar{
+    display: flex;
+    vertical-align: middle;
+}
+
+mat-datepicker-toggle{
+    color:#000000;
+    margin-left:-40px;
+}
+
+.coordform{
+    margin-bottom:15px;
+}
+
+.coordgroup{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+
+}
+
+@media (max-width: 600px) {
+    .coordgroup {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+  }
