@@ -9,6 +9,10 @@ import { DateAdapter } from '@angular/material/core';
 })
 export class CheckoutComponent implements OnInit {
 
+  hideCart : boolean = true;
+  hideDelivery : boolean = false;
+  hideClient : boolean = false;
+
   minDate = new Date();
 
   constructor(private dateAdapter: DateAdapter<Date>) {
@@ -16,6 +20,24 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  showCart(){
+    this.hideCart = true;
+    this.hideDelivery = false;
+    this.hideClient = false;
+  }
+
+  showDelivery(){
+    this.hideCart = false;
+    this.hideDelivery = true;
+    this.hideClient = false;
+  }
+
+  showClient(){
+    this.hideCart = false;
+    this.hideDelivery = false;
+    this.hideClient = true;
   }
 
 }

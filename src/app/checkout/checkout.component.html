@@ -1,5 +1,5 @@
 <div class="checkout">
-    <div class="main-checkout">
+    <div class="main-checkout" *ngIf="hideCart">
         <div class="checkout-title">Commande (2)</div>
         <div class="item-list">
             <div class="item">
@@ -44,16 +44,18 @@
                 <div class="total-label">Total</div>
                 <div class="total-amount">120.-</div>
             </div>
+
+            <div class="item-row">
+                <button class="btn-checkout" (click)="showDelivery()">LIVRAISON 	&#x2192;</button>
+            </div>
         </div>
-        <div class="btn">
-            <button class="btn-checkout">LIVRAISON 	&#x2192;</button>
-        </div>
+        
     </div>
 
 
 
-    <div class="main-checkout">
-        <div class="checkout-title">Livraison</div>
+    <div class="main-checkout" *ngIf="hideDelivery">
+        <div class="checkout-title" >Livraison</div>
         <div class="item-list">
             <div class="item">
                 <div class="item-row delivery-option">
@@ -94,13 +96,13 @@
                 <div class="total-label">Total</div>
                 <div class="total-amount">129.-</div>
             </div>
-        </div>
-        <div class="btn">
-            <button class="btn-checkout">COORDONNEES 	&#x2192;</button>
+            <div class="item-row">
+                <button class="btn-checkout" (click)="showClient()">COORDONNEES 	&#x2192;</button>
+            </div>
         </div>
     </div>
 
-    <div class="main-checkout">
+    <div class="main-checkout" *ngIf="hideClient">
         <div class="checkout-title">Coordonnées</div>
         <div class="item-list">
             <div class="item">
@@ -159,10 +161,11 @@
             <div class="item-row total">
                 <div class="total-label">Total</div>
                 <div class="total-amount">129.-</div>
-            </div>
+            </div>  
+            <div class="item-row">
+                <button class="btn-checkout" (click)="showCart()">PAIEMENT 	&#x2192;</button>
+            </div>          
         </div>
-        <div class="btn">
-            <button class="btn-checkout">PAIEMENT 	&#x2192;</button>
-        </div>
+        
     </div>
 </div>
