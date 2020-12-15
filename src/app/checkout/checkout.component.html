@@ -32,24 +32,53 @@
                     <div class="item-totalprice">140.-</div>
                 </div>
             </div>
-
-        </div>
-
-        <div class="checkout-box">
-            <div class="item-row">
-                <div class="subtotal-label">Sous-Total</div>
-                <div class="subtotal-amount">120.-</div>
+            <div class="item">
+                <div class="item-row">
+                    <div class="item-name">Fendant St-Léonard Grand Cru</div>
+                    <img class="item-remove" src="../assets/icons/recycle-bin.png">
+                </div>
+                    <div class="item-variant">75cl</div>
+                <div class="item-row">
+                    <div class="quantityChooser">
+                        <div class="quantityM-left">-</div>
+                        <input class="quantityValue" type="text" placeholder="0">
+                        <span class="quantityM-right">+</span>
+                    </div>
+                    <div class="item-totalprice">140.-</div>
+                </div>
             </div>
-            <div class="item-row total">
-                <div class="total-label">Total</div>
-                <div class="total-amount">120.-</div>
+            <div class="item">
+                <div class="item-row">
+                    <div class="item-name">Fendant St-Léonard Grand Cru</div>
+                    <img class="item-remove" src="../assets/icons/recycle-bin.png">
+                </div>
+                    <div class="item-variant">75cl</div>
+                <div class="item-row">
+                    <div class="quantityChooser">
+                        <div class="quantityM-left">-</div>
+                        <input class="quantityValue" type="text" placeholder="0">
+                        <span class="quantityM-right">+</span>
+                    </div>
+                    <div class="item-totalprice">140.-</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-row">
+                    <div class="item-name">Fendant St-Léonard Grand Cru</div>
+                    <img class="item-remove" src="../assets/icons/recycle-bin.png">
+                </div>
+                    <div class="item-variant">75cl</div>
+                <div class="item-row">
+                    <div class="quantityChooser">
+                        <div class="quantityM-left">-</div>
+                        <input class="quantityValue" type="text" placeholder="0">
+                        <span class="quantityM-right">+</span>
+                    </div>
+                    <div class="item-totalprice">140.-</div>
+                </div>
             </div>
 
-            <div class="item-row">
-                <button class="btn-checkout" (click)="showDelivery()">LIVRAISON 	&#x2192;</button>
-            </div>
-        </div>
-        
+        </div>        
     </div>
 
 
@@ -80,24 +109,6 @@
                         <mat-datepicker #picker></mat-datepicker>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="checkout-box">
-            <div class="item-row">
-                <div class="subtotal-label">Sous-Total</div>
-                <div class="subtotal-amount">120.-</div>
-            </div>
-            <div class="item-row">
-                <div class="subtotal-label">Livraison</div>
-                <div class="subtotal-amount">9.-</div>
-            </div>
-            <div class="item-row total">
-                <div class="total-label">Total</div>
-                <div class="total-amount">129.-</div>
-            </div>
-            <div class="item-row">
-                <button class="btn-checkout" (click)="showClient()">COORDONNEES 	&#x2192;</button>
             </div>
         </div>
     </div>
@@ -148,8 +159,13 @@
                 </div>
             </div>
         </div>
+        
+    </div>
+</div>
 
-        <div class="checkout-box">
+<div class="checkout-box">
+    <div class="main-checkout">
+        <div class="item-list checkout-info">
             <div class="item-row">
                 <div class="subtotal-label">Sous-Total</div>
                 <div class="subtotal-amount">120.-</div>
@@ -162,10 +178,9 @@
                 <div class="total-label">Total</div>
                 <div class="total-amount">129.-</div>
             </div>  
-            <div class="item-row">
+            <div class="item-row btn">
                 <button class="btn-checkout" (click)="showCart()">PAIEMENT 	&#x2192;</button>
             </div>          
         </div>
-        
     </div>
 </div>

@@ -1,19 +1,20 @@
-
-<div class="nav">
-    <div class="nav-logo" routerLink="/"><img src="../assets/img/logo.png" class="nav-img"></div>
-        <div class="main-nav">
-            <input type="search" class="form-control search-input" placeholder="Recherche">            
-            <div class="filter nav-item" (click)="showDetails()"><img src="../assets/icons/filter.png" class="nav-icons"></div>
-            <div class="cart nav-item" routerLink="checkout"><img src="../assets/icons/wine.png" class="nav-icons"></div>
-        </div>
-</div>
-<div class="filter-list" *ngIf="hideContent">
-    <label>Catégories</label>
-        <select class="form-control drop">
-            <option >Tous les produits</option>
-            <option>Vins blancs</option>
-            <option>Vins rouges</option>
-            <option>Vins rosés</option>
-            <option>Fûts de chêne</option>
-        </select>
-</div>
+<header>
+    <div class="nav">
+        <div class="nav-logo" routerLink="/"><img src="../assets/img/logo.png" class="nav-img"></div>
+            <div class="main-nav">
+                <input type="search" class="form-control search-input" placeholder="Recherche">            
+                <div class="filter nav-item" (click)="showDetails()"><img src="../assets/icons/filter.png" class="nav-icons"></div>
+                <div class="cart nav-item" routerLink="checkout"><img src="../assets/icons/wine.png" class="nav-icons"></div>
+            </div>
+    </div>
+    <div class="filter-list" *ngIf="hideContent">
+        <label>Catégories</label>
+            <select class="form-control drop">
+                <option >Tous les produits</option>
+                <option>Vins blancs</option>
+                <option>Vins rouges</option>
+                <option>Vins rosés</option>
+                <option>Fûts de chêne</option>
+            </select>
+    </div>
+</header>

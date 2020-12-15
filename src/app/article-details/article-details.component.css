@@ -2,7 +2,8 @@
 .article{
     margin-left:5%;
     margin-right:5%;
-    margin-top: 50px;
+    padding-top: 120px;
+    margin-bottom: 50px;
 }
 
 .article-infos{
