@@ -2,13 +2,11 @@
     margin-left:5%;
     margin-right:5%;
     padding-top: 120px;
-    margin-bottom: 180px;
 }
 
 .main-checkout{
     padding:10px;
     border-radius: 10px;
-
 }
 
 .checkout-title{
@@ -17,7 +15,7 @@
 }
 
 .item-list{
-    width: 100%;
+    
 }
 
 .item-row{
@@ -27,7 +25,7 @@
 }
 
 .item{
-    width: 100%;
+    
     border-bottom: 1px solid #F9F9F9;
     padding:30px;
     margin-bottom: 10px;
@@ -122,18 +120,14 @@
 .checkout-box{
     margin-left:5%;
     margin-right:5%;
-    position: fixed;
-    bottom:0;
 }
 
 .checkout-info{
-    width: 100%;
     border-bottom: 1px solid #F9F9F9;
     padding-left:30px;
     padding-right:30px;
     margin-bottom: 10px;
     border-radius: 10px;
-    background-color: teal;
 }
 
 .total{

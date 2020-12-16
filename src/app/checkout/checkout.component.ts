@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DateAdapter } from '@angular/material/core';
+import { createNoSubstitutionTemplateLiteral } from 'typescript';
 
 
 @Component({
@@ -13,7 +14,13 @@ export class CheckoutComponent implements OnInit {
   hideDelivery : boolean = false;
   hideClient : boolean = false;
 
+  deliveryByTransporter : boolean = false;
+  deliveryByTransporterAmount = 9;
+
   minDate = new Date();
+
+  cartSubTotal = 120;
+  cartAmount = this.cartSubTotal;
 
   constructor(private dateAdapter: DateAdapter<Date>) {
     this.dateAdapter.setLocale('FR-CH'); 
@@ -39,5 +46,18 @@ export class CheckoutComponent implements OnInit {
     this.hideDelivery = false;
     this.hideClient = true;
   }
+
+  onItemChange(value){
+    console.log(" Value is : ", value );
+
+    if(value == "deliveryByTransporter"){
+      this.deliveryByTransporter = true;
+      this.cartAmount += this.deliveryByTransporterAmount;
+    }
+    else{
+      this.deliveryByTransporter = false;
+      this.cartAmount -= this.deliveryByTransporterAmount;
+    }
+ }
 
 }
