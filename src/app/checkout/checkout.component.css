@@ -15,7 +15,7 @@
 }
 
 .item-list{
-    
+    margin-bottom: 160px;
 }
 
 .item-row{
@@ -118,14 +118,20 @@
 }
 
 .checkout-box{
-    margin-left:5%;
-    margin-right:5%;
+    width:100%;
+    background-color: #ffffff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    border-radius: 15px 15px 0px 0px ;
+
 }
 
 .checkout-info{
-    border-bottom: 1px solid #F9F9F9;
     padding-left:30px;
     padding-right:30px;
+    padding-top:10px;
     margin-bottom: 10px;
     border-radius: 10px;
 }

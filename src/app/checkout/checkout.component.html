@@ -1,6 +1,6 @@
 <div class="checkout">
     <div class="main-checkout" *ngIf="hideCart">
-        <div class="checkout-title">Commande (2)</div>
+        <div class="checkout-title">Votre Commande (6)</div>
         <div class="item-list">
             <div class="item">
                 <div class="item-row">
@@ -78,20 +78,7 @@
                 </div>
             </div>
 
-        </div>
-        <div class="item-list checkout-info">
-            <div class="item-row">
-                <div class="subtotal-label">Sous-Total</div>
-                <div class="subtotal-amount">{{cartSubTotal}}.-</div>
-            </div>
-            <div class="item-row total">
-                <div class="total-label">Total</div>
-                <div class="total-amount">{{cartAmount}}.-</div>
-            </div>  
-            <div class="item-row btn">
-                <button class="btn-checkout" (click)="showDelivery()">LIVRAISON 	&#x2192;</button>
-            </div>          
-        </div>    
+        </div>   
     </div>
 
 
@@ -124,23 +111,6 @@
                 </div>
             </div>
         </div>
-        <div class="item-list checkout-info">
-            <div class="item-row">
-                <div class="subtotal-label">Sous-Total</div>
-                <div class="subtotal-amount">{{cartSubTotal}}.-</div>
-            </div>
-            <div class="item-row" *ngIf="deliveryByTransporter">
-                <div class="subtotal-label">Livraison</div>
-                <div class="subtotal-amount">{{deliveryByTransporterAmount}}.-</div>
-            </div>
-            <div class="item-row total">
-                <div class="total-label">Total</div>
-                <div class="total-amount">{{cartAmount}}.-</div>
-            </div>  
-            <div class="item-row btn">
-                <button class="btn-checkout" (click)="showClient()">COORDONNEES 	&#x2192;</button>
-            </div>          
-        </div>  
     </div>
 
     <div class="main-checkout" *ngIf="hideClient">
@@ -188,25 +158,27 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="item-list checkout-info">
-            <div class="item-row">
-                <div class="subtotal-label">Sous-Total</div>
-                <div class="subtotal-amount">{{cartSubTotal}}.-</div>
-            </div>
-            <div class="item-row">
-                <div class="subtotal-label">Livraison</div>
-                <div class="subtotal-amount">{{deliveryByTransporterAmount}}.-</div>
-            </div>
-            <div class="item-row total">
-                <div class="total-label">Total</div>
-                <div class="total-amount">{{cartAmount}}.-</div>
-            </div>  
-            <div class="item-row btn">
-                <button class="btn-checkout" (click)="showCart()">PAIEMENT 	&#x2192;</button>
-            </div>          
-        </div>  
-        
+        </div>        
     </div>
 </div>
-
+<div class="checkout-box">
+    <div class="checkout-info">
+        <div class="item-row">
+            <div class="subtotal-label">Sous-Total</div>
+            <div class="subtotal-amount">{{cartSubTotal}}.-</div>
+        </div>
+        <div class="item-row" *ngIf="deliveryByTransporter">
+            <div class="subtotal-label" >Livraison</div>
+            <div class="subtotal-amount">{{deliveryByTransporterAmount}}.-</div>
+        </div>
+        <div class="item-row total">
+            <div class="total-label">Total</div>
+            <div class="total-amount">{{cartAmount}}.-</div>
+        </div>  
+        <div class="item-row btn" >
+            <button class="btn-checkout" (click)="showDelivery()" *ngIf="hideCart">Livraison 	&#x2192;</button>
+            <button class="btn-checkout" (click)="showClient()" *ngIf="hideDelivery">Coordonnées 	&#x2192;</button>
+            <button class="btn-checkout" (click)="showPayment()" *ngIf="hideClient">Paiement 	&#x2192;</button>
+        </div>          
+    </div> 
+</div>
