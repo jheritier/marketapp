@@ -10,17 +10,17 @@
             <div class="variant-list">
                 <div class="variant-name">Contenance</div>
                 <div class="variant-item-list">
-                    <div class="variant-item">50cl</div>
-                    <div class="variant-item">75cl</div>
+                    <div (click)="bottleSize(1)" class="variant-item" [ngClass]="isSelected1 ? 'variant-item-selected' : 'variant-item'">50cl</div>
+                    <div (click)="bottleSize(2)" class="variant-item" [ngClass]="isSelected2 ? 'variant-item-selected' : 'variant-item'">75cl</div>
                 </div>
             </div>
 
             <div class="quantity">
                 <div class="quantityLabel">Quantité</div>
                 <div class="quantityChooser">
-                    <div class="quantityM-left">-</div>
-                    <input class="quantityValue" type="text" placeholder="0">
-                    <span class="quantityM-right">+</span>
+                    <div class="quantityM-left" (click)="quantityM()">-</div>
+                    <input class="quantityValue" type="number" step="1" placeholder="0" value="{{quantity}}" (input)="onInputChange($event.target.value)">
+                    <span class="quantityM-right" (click)="quantityP()">+</span>
                 </div>
             </div>
 

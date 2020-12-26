@@ -3,7 +3,7 @@
     margin-left:5%;
     margin-right:5%;
     padding-top: 120px;
-    margin-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 .article-infos{
@@ -66,6 +66,22 @@
     background-color: #262626;
     color: #ffffff;
     border: solid 1px #262626;
+}
+
+.variant-item-selected{
+    background-color: #262626;
+    color: #ffffff;
+    border: solid 1px #262626;
+
+    border-radius: 8px;
+
+    height: 50px;
+    width: 80px;
+    margin-right: 10px;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .quantity{
@@ -171,7 +187,16 @@ button{
         width: 60%;
         display: block;
         margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
+    }
+
+    button{
+
+        width: 100%;
+    }
+
+    .quantityValue{
+        width: 40%;
     }
 
 }
@@ -181,4 +206,10 @@ button{
         width: 100%;
     }
 
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
