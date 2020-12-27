@@ -13,6 +13,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
+import { CartService } from './services/cart.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import { MatNativeDateModule } from '@angular/material/core';
   ],
   providers: [
     MatDatepickerModule,
-    MatNativeDateModule 
+    MatNativeDateModule,
+    CartService 
   ],
   bootstrap: [AppComponent]
 })
