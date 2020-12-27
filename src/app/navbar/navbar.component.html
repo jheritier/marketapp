@@ -4,7 +4,10 @@
             <div class="main-nav">
                 <input type="search" class="form-control search-input" placeholder="Recherche">            
                 <div class="filter nav-item" (click)="showDetails()"><img src="../assets/icons/filter.png" class="nav-icons"></div>
-                <div class="cart nav-item" routerLink="checkout"><img src="../assets/icons/wine.png" class="nav-icons"></div>
+                <div class="cart nav-item" routerLink="checkout">
+                    <img src="../assets/icons/wine.png" class="nav-icons">
+                    <div class="cart-quantity" *ngIf="cartquantity > 0">{{cartquantity}}</div>
+                </div>
             </div>
     </div>
     <div class="filter-list" *ngIf="hideContent">

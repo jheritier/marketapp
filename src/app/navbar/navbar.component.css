@@ -113,3 +113,20 @@ option::selection{
 option{
     background-color: blue;
 }
+
+.cart-quantity{
+    color: white;
+    background-color: #262626;
+    
+
+    font-size: 12px;
+    border-radius: 0px 0px 8px 8px;
+    width: 40px;
+    
+    margin-top: 3px;
+    
+}
+
+.cart{
+    
+}
