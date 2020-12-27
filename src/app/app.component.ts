@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { CartService } from './services/cart.service'
+import { CommonModule } from '@angular/common';
+
+
+import { CartService } from './services/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,7 @@ import { CartService } from './services/cart.service'
 export class AppComponent {
   title = 'marketapp';
 
-  
+
   
   onActivate(event) {
     window.scroll(0,0);

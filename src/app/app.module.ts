@@ -14,6 +14,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
 import { CartService } from './services/cart.service';
+import { ArticleService } from './services/article.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CartService } from './services/cart.service';
   providers: [
     MatDatepickerModule,
     MatNativeDateModule,
-    CartService 
+    CartService,
+    ArticleService
   ],
   bootstrap: [AppComponent]
 })
