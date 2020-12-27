@@ -29,7 +29,7 @@ import { ArticleService } from './services/article.service';
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: CatalogComponent },
-      { path: 'article-details/:productId', component: ArticleDetailsComponent },
+      { path: 'article-details/:article.id', component: ArticleDetailsComponent },
       { path: 'checkout', component: CheckoutComponent },
     ]),
     NgbModule,

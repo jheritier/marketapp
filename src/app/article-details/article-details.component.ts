@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import products from '../_files/products.json';
 import { ActivatedRoute } from '@angular/router';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-article-details',
@@ -9,19 +9,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArticleDetailsComponent implements OnInit {
   
-  product;
+  article;
+
+  articleVariant: any[];
+  selectedVariant: boolean[];
+
   quantity = 0;
   isSelected1 : boolean = false;
   isSelected2 : boolean = false;
   
   constructor(
     private route: ActivatedRoute,
+    private articleService : ArticleService,
   ) { };
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.product = products[+params.get('productId')];
+      this.article = this.articleService.getArticleById(params.get("article.id"));
     });
+
+    console.log(this.article[0].variants[0].name);
+    console.log(this.article[0].variants[0].values);
+
+    this.articleVariant = this.article[0].variants[0].values;
+
   }
 
   quantityP(){
@@ -35,17 +46,12 @@ export class ArticleDetailsComponent implements OnInit {
     }
   }
 
-  bottleSize(bottleValue){
-    console.log("the Value :" + bottleValue);
-    if(bottleValue == 1){
-      this.isSelected1 = true;
-      this.isSelected2 = false;
-    }
-    if(bottleValue == 2){
-      this.isSelected1 = false;
-      this.isSelected2 = true;
-    }
+  onSelectVariant(variantId){
+    console.log(variantId);
+
+    this.selectedVariant[variantId] = true;
   }
+
 
   onInputChange(changeValue){
     this.quantity = changeValue;

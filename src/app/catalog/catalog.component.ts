@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import products from '../_files/products.json';
 import { ArticleService } from '../services/article.service';
 
 @Component({
@@ -10,11 +9,13 @@ import { ArticleService } from '../services/article.service';
 })
 export class CatalogComponent implements OnInit {
 
-  public productList:{name:string, price:string}[] = products;
+  articleList : any[];
   
-  constructor() { };
+  constructor(private articleService: ArticleService) { };
 
   ngOnInit(): void {
+    this.articleList = this.articleService.getArticleWithoutVariant();
   };
 
 }
+
