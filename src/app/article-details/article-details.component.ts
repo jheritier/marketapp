@@ -1,3 +1,4 @@
+import { ifStmt } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../services/article.service';
@@ -12,7 +13,11 @@ export class ArticleDetailsComponent implements OnInit {
   article;
 
   articleVariant: any[];
-  selectedVariant: boolean[];
+  selectedVariant: boolean[] = [];
+
+  articlePrice;
+  articleVariantDef;
+  variantIdSelected;
 
   quantity = 0;
   isSelected1 : boolean = false;
@@ -24,16 +29,55 @@ export class ArticleDetailsComponent implements OnInit {
   ) { };
 
   ngOnInit() {
+
+    // Données de l'article
     this.route.paramMap.subscribe(params => {
       this.article = this.articleService.getArticleById(params.get("article.id"));
     });
 
-    console.log(this.article[0].variants[0].name);
-    console.log(this.article[0].variants[0].values);
-
+    // Listes des déclinaisons
     this.articleVariant = this.article[0].variants[0].values;
-
+    this.resetVariantSelection();
+    
+    //set default variant
+    this.onSelectVariant(0);
+    this.getArticlePrice();
   }
+
+  getArticlePrice(){
+
+    // if variant exists
+    if(this.articleVariant.length > 1){
+      this.articleVariantDef = this.articleService.getArticleById(this.article[0].variantArticles[this.variantIdSelected].article)
+      
+      this.articlePrice = this.articleVariantDef[0].price;
+
+    }else{
+      this.articlePrice = this.article[0].price;
+    }
+    
+  }
+
+  // selected variant on articleDetails
+  onSelectVariant(variantId){
+    this.variantIdSelected = variantId;
+    this.resetVariantSelection();
+
+    // set variant button
+    this.selectedVariant[variantId] = true;
+    
+    // set price
+    this.getArticlePrice();
+    
+  }
+
+  // reset variant array
+  resetVariantSelection(){
+    for(let i = 0; i < 2; i++){
+      this.selectedVariant[i] = false;
+    }
+  }
+
 
   quantityP(){
     this.quantity++;
@@ -46,17 +90,9 @@ export class ArticleDetailsComponent implements OnInit {
     }
   }
 
-  onSelectVariant(variantId){
-    console.log(variantId);
-
-    this.selectedVariant[variantId] = true;
-  }
-
-
   onInputChange(changeValue){
     this.quantity = changeValue;
   }
-
 
 
 }

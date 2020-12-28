@@ -3,13 +3,15 @@
         <img src="../assets/img/gamay.jpg" class="article-image">
         <div class="article-details">
             <div class="article-content">{{article[0].name}}</div>
-            CHF {{article[0].price}}
+            CHF {{articlePrice}}
 
             <div class="variant-list">
                 <div class="variant-name">{{article[0].variants[0].name}}</div>
-                <div class="variant-item-list" *ngFor="let variant of articleVariant; let i = index">
-                    <div  class="variant-item" (click)="onSelectVariant(i)" >{{ articleVariant[i] }}</div>
+                <div class="variant-item-list">
+                    <div class="variant-item" (click)="onSelectVariant(i)" *ngFor="let variant of articleVariant; let i = index" [ngClass]="selectedVariant[i] ? 'variant-item-selected' : 'variant-item'">{{ articleVariant[i] }}</div>
                 </div>
+
+                
             </div>
 
             <div class="quantity">

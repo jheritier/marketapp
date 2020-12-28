@@ -19,10 +19,10 @@ export class ArticleService{
             ],
             variantArticles: [
                 {
-                    article:"101", // id de l'article variant
+                    article:101, // id de l'article variant
                 },
                 {
-                    article:"102", // id de l'article variant
+                    article:102, // id de l'article variant
                 }
             ]
         },
