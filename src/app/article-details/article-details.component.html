@@ -2,11 +2,11 @@
     <div class="article-infos">
         <img src="../assets/img/gamay.jpg" class="article-image">
         <div class="article-details">
-            <div class="article-content">{{article[0].name}}</div>
+            <div class="article-content">{{article.name}}</div>
             CHF {{articlePrice}}
 
             <div class="variant-list">
-                <div class="variant-name">{{article[0].variants[0].name}}</div>
+                <div class="variant-name">{{article.variants.name}}</div>
                 <div class="variant-item-list">
                     <div class="variant-item" (click)="onSelectVariant(i)" *ngFor="let variant of articleVariant; let i = index" [ngClass]="selectedVariant[i] ? 'variant-item-selected' : 'variant-item'">{{ articleVariant[i] }}</div>
                 </div>
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <button>Ajouter</button>
+            <button (click)="addToCart()">Ajouter</button>
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleService } from '../services/article.service';
+import { Article, VariantArticle } from '../models/article';
 
 @Component({
   selector: 'app-catalog',
@@ -9,12 +10,12 @@ import { ArticleService } from '../services/article.service';
 })
 export class CatalogComponent implements OnInit {
 
-  articleList : any[];
+  articles : Article[] = [];
   
   constructor(private articleService: ArticleService) { };
 
   ngOnInit(): void {
-    this.articleList = this.articleService.getArticleWithoutVariant();
+    this.articles = this.articleService.getArticleWithoutVariant();
   };
 
 }

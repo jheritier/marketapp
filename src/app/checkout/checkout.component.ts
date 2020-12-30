@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DateAdapter } from '@angular/material/core';
 import { createNoSubstitutionTemplateLiteral } from 'typescript';
+import { CartService } from '../services/cart.service';
+import { ArticleService } from '../services/article.service';
+
 
 
 @Component({
@@ -22,12 +25,32 @@ export class CheckoutComponent implements OnInit {
   cartSubTotal = 120;
   cartAmount = this.cartSubTotal;
 
-  constructor(private dateAdapter: DateAdapter<Date>) {
+  cartArticleList;
+  articleList;
+
+  constructor(private dateAdapter: DateAdapter<Date>, private cartService: CartService, private articleService: ArticleService ) {
     this.dateAdapter.setLocale('FR-CH'); 
   }
 
   ngOnInit(): void {
+    this.getCart();
   }
+
+  getCart(){
+    this.cartArticleList = this.cartService.getCart();
+    console.log(this.cartService.getCart());
+
+  }
+
+  clearCart(){
+    this.cartService.clearCart();
+  }
+
+  removeItem(){}
+
+
+
+
 
   showCart(){
     this.hideCart = true;

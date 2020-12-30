@@ -2,6 +2,8 @@ import { ifStmt } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../services/article.service';
+import { CartService } from '../services/cart.service';
+import { Article, VariantArticle } from '../models/article';
 
 @Component({
   selector: 'app-article-details',
@@ -10,9 +12,17 @@ import { ArticleService } from '../services/article.service';
 })
 export class ArticleDetailsComponent implements OnInit {
   
-  article;
-
+ // article : Article[] = [];
   articleVariant: any[];
+
+  article : Article;
+
+  selectedVariantArticle;
+
+
+
+  articleId:number = 0;
+
   selectedVariant: boolean[] = [];
 
   articlePrice;
@@ -20,12 +30,12 @@ export class ArticleDetailsComponent implements OnInit {
   variantIdSelected;
 
   quantity = 0;
-  isSelected1 : boolean = false;
-  isSelected2 : boolean = false;
+
   
   constructor(
     private route: ActivatedRoute,
     private articleService : ArticleService,
+    private cartService: CartService,
   ) { };
 
   ngOnInit() {
@@ -35,46 +45,53 @@ export class ArticleDetailsComponent implements OnInit {
       this.article = this.articleService.getArticleById(params.get("article.id"));
     });
 
-    // Listes des déclinaisons
-    this.articleVariant = this.article[0].variants[0].values;
-    this.resetVariantSelection();
-    
-    //set default variant
+    this.getVariantArticle();
     this.onSelectVariant(0);
-    this.getArticlePrice();
   }
 
-  getArticlePrice(){
+  getVariantArticle(){
+    this.articleVariant = this.article.variants.values;
+  }
 
-    // if variant exists
+  getArticlePrice(articleId){
     if(this.articleVariant.length > 1){
-      this.articleVariantDef = this.articleService.getArticleById(this.article[0].variantArticles[this.variantIdSelected].article)
-      
-      this.articlePrice = this.articleVariantDef[0].price;
+      this.selectedVariantArticle = this.articleService.getArticleById(this.article.variantArticles[articleId].article);
+      this.articlePrice = this.selectedVariantArticle.price;
 
     }else{
-      this.articlePrice = this.article[0].price;
+      this.articlePrice = this.article.price;
     }
-    
   }
 
   // selected variant on articleDetails
   onSelectVariant(variantId){
-    this.variantIdSelected = variantId;
+
     this.resetVariantSelection();
 
     // set variant button
     this.selectedVariant[variantId] = true;
     
     // set price
-    this.getArticlePrice();
-    
+    this.getArticlePrice(variantId);
+
   }
 
   // reset variant array
   resetVariantSelection(){
-    for(let i = 0; i < 2; i++){
+    for(let i = 0; i < this.articleVariant.length; i++){
       this.selectedVariant[i] = false;
+    }
+  }
+
+  addToCart(){
+    
+    if(this.articleVariant.length > 1){
+      this.selectedVariantArticle.quantity = this.quantity;
+    this.cartService.addToCart(this.selectedVariantArticle);
+
+    }else{
+      this.article.quantity = this.quantity;
+      this.cartService.addToCart(this.article);
     }
   }
 
