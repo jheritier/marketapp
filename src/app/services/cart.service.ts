@@ -19,16 +19,44 @@ export class CartService{
 
 
     addToCart(article: Article){
-        this.currentCart.articles.push(article);
+
+        // check if already exist on cart
+        const selectedArticle = this.currentCart.articles.find(dataArticle =>{
+            return dataArticle.id === article.id;
+        });
+
+        if(!selectedArticle){
+            // if not add the item
+            this.currentCart.articles.push(article);
+            
+        }else{
+            // else update the quantity
+            selectedArticle.quantity = article.quantity;
+        }
+
+        this.updateTotalAmount();
+          
         
+    }
+
+    updateTotalAmount(){
+        this.currentCart.totalAmount = 0;
+
+        this.currentCart.articles.forEach(dataArticle => {
+            this.currentCart.totalAmount += dataArticle.quantity * dataArticle.price;
+        });
     }
 
     getCart(){
         return this.currentCart;
     }
         
-    removeItem(){
+    removeItem(articleid){
+        this.currentCart.articles.splice(this.currentCart.articles.findIndex(dataArticle => {
+            return dataArticle.id === articleid
+        }));
 
+        this.updateTotalAmount();
     }
 
     clearCart(){
@@ -36,6 +64,7 @@ export class CartService{
             articles:[],
             totalAmount:0,
         }
+        
     }
 
 }

@@ -3,6 +3,7 @@ import { DateAdapter } from '@angular/material/core';
 import { createNoSubstitutionTemplateLiteral } from 'typescript';
 import { CartService } from '../services/cart.service';
 import { ArticleService } from '../services/article.service';
+import { Article, VariantArticle } from '../models/article';
 
 
 
@@ -11,7 +12,10 @@ import { ArticleService } from '../services/article.service';
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
+
 export class CheckoutComponent implements OnInit {
+
+  
 
   hideCart : boolean = true;
   hideDelivery : boolean = false;
@@ -22,11 +26,13 @@ export class CheckoutComponent implements OnInit {
 
   minDate = new Date();
 
-  cartSubTotal = 120;
-  cartAmount = this.cartSubTotal;
+  cartSubTotal;
+  cartAmount = 0;
 
-  cartArticleList;
-  articleList;
+  article : Article;
+  cartArticles : Article[] = [];
+  currentCart;
+  itemInCart = 0 ;
 
   constructor(private dateAdapter: DateAdapter<Date>, private cartService: CartService, private articleService: ArticleService ) {
     this.dateAdapter.setLocale('FR-CH'); 
@@ -37,8 +43,17 @@ export class CheckoutComponent implements OnInit {
   }
 
   getCart(){
-    this.cartArticleList = this.cartService.getCart();
-    console.log(this.cartService.getCart());
+    this.currentCart = this.cartService.getCart();
+
+    this.cartArticles = this.currentCart.articles;
+
+    this.cartSubTotal = this.currentCart.totalAmount;
+
+    this.cartAmount = this.cartSubTotal;
+
+    this.itemInCart = this.currentCart.articles.length;
+
+    console.log(this.cartArticles)
 
   }
 
@@ -46,7 +61,9 @@ export class CheckoutComponent implements OnInit {
     this.cartService.clearCart();
   }
 
-  removeItem(){}
+  removeItem(articleid){
+    this.cartService.removeItem(articleid);
+  }
 
 
 
@@ -56,6 +73,8 @@ export class CheckoutComponent implements OnInit {
     this.hideCart = true;
     this.hideDelivery = false;
     this.hideClient = false;
+
+
   }
 
   showDelivery(){

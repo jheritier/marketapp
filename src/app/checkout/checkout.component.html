@@ -1,20 +1,20 @@
 <div class="checkout">
     <div class="main-checkout" *ngIf="hideCart">
-        <div class="checkout-title" (click)="clearCart()">Votre Commande (6)</div>
+        <div class="checkout-title" (click)="clearCart()">Votre Commande ({{itemInCart}})</div>
         <div class="item-list">
-            <div class="item">
+            <div class="item" *ngFor="let cartItem of cartArticles; let i = index">
                 <div class="item-row">
-                    <div class="item-name">{{cartArticleList.name}}</div>
-                    <img class="item-remove" src="../assets/icons/recycle-bin.png">
+                    <div class="item-name">{{cartArticles[i].name}}</div>
+                    <img class="item-remove" src="../assets/icons/recycle-bin.png" (click)="removeItem(i)">
                 </div>
-                    <div class="item-variant">Variant</div>
+                    <div class="item-variant">Selected Variant Name</div>
                 <div class="item-row">
                     <div class="quantityChooser">
                         <div class="quantityM-left">-</div>
                         <input class="quantityValue" type="text" placeholder="0">
                         <span class="quantityM-right">+</span>
                     </div>
-                    <div class="item-totalprice">Total Article Price</div>
+                    <div class="item-totalprice">{{(cartArticles[i].price * cartArticles[i].quantity)}}.-</div>
                 </div>
             </div>
         </div>   
