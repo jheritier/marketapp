@@ -10,6 +10,7 @@ export interface Article{
     }
     variantArticles:VariantArticle[], 
     isVariant:boolean,
+    parentArticle:string,
     quantity:number,
 }
 

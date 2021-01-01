@@ -47,10 +47,14 @@ export class CheckoutComponent implements OnInit {
 
     this.cartArticles = this.currentCart.articles;
 
+
+    
     this.cartSubTotal = this.currentCart.totalAmount;
 
     this.cartAmount = this.cartSubTotal;
 
+
+    // Item in cart
     this.itemInCart = this.currentCart.articles.length;
 
     console.log(this.cartArticles)
@@ -59,10 +63,12 @@ export class CheckoutComponent implements OnInit {
 
   clearCart(){
     this.cartService.clearCart();
+    this.getCart();
   }
 
   removeItem(articleid){
     this.cartService.removeItem(articleid);
+    this.getCart();
   }
 
 

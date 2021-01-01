@@ -26,6 +26,7 @@ export class ArticleService{
                 }
             ],
             isVariant: false,
+            parentArticle:"",
             quantity:0,       
         },
 
@@ -41,12 +42,13 @@ export class ArticleService{
             },
             variantArticles: [],
             isVariant: true,
+            parentArticle:"1000",
             quantity:0,       
         },
 
         {   
             id: "1002",
-            articleNo : "1001",   
+            articleNo : "1002",   
             name : "Petite Arvine 75cl",
             price : 20,
             category :"Vins blancs",
@@ -56,6 +58,7 @@ export class ArticleService{
             },
             variantArticles: [],
             isVariant: true,
+            parentArticle:"1000",
             quantity:0,       
         },
 
@@ -73,6 +76,7 @@ export class ArticleService{
             },
             variantArticles: [],
             isVariant: false,
+            parentArticle:"",
             quantity:0,       
         },
 
@@ -102,6 +106,7 @@ export class ArticleService{
                 }
             ],
             isVariant: false,
+            parentArticle:"",
             quantity:0,       
         },
 
@@ -117,6 +122,7 @@ export class ArticleService{
             },
             variantArticles: [],
             isVariant: true,
+            parentArticle:"1020",
             quantity:0,       
         },
 
@@ -132,6 +138,7 @@ export class ArticleService{
             },
             variantArticles: [],
             isVariant: true,
+            parentArticle:"1020",
             quantity:0,       
         },
 
@@ -147,6 +154,7 @@ export class ArticleService{
             },
             variantArticles: [],
             isVariant: true,
+            parentArticle:"1020",
             quantity:0,       
         },
 
@@ -162,6 +170,10 @@ export class ArticleService{
     getArticleWithoutVariant(){
         return this.IArticle.filter(variant => variant.isVariant !== true);
          
+    }
+
+    getArticleParent(articleid){
+        return this.IArticle.find(articleparent => articleparent.id === articleid)
     }
 
     getArticleById(articleid){
