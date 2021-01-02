@@ -33,6 +33,7 @@ export class CheckoutComponent implements OnInit {
   cartArticles : Article[] = [];
   currentCart;
   itemInCart = 0 ;
+  parentname;
 
   constructor(private dateAdapter: DateAdapter<Date>, private cartService: CartService, private articleService: ArticleService ) {
     this.dateAdapter.setLocale('FR-CH'); 
@@ -71,8 +72,17 @@ export class CheckoutComponent implements OnInit {
     this.getCart();
   }
 
+  getParentName(articleparentid, articleid){
 
+    if(articleparentid == ""){
+      this.parentname = this.articleService.getArticleById(articleid);
+    }else{
+      this.parentname = this.articleService.getArticleParent(articleparentid);
+    }
 
+  
+    return this.parentname.name;
+  }
 
 
   showCart(){

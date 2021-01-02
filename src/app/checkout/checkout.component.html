@@ -4,7 +4,7 @@
         <div class="item-list">
             <div class="item" *ngFor="let cartItem of cartArticles; let i = index">
                 <div class="item-row">
-                    <div class="item-name">{{cartArticles[i].name}}</div>
+                    <div class="item-name">{{getParentName(cartArticles[i].parentArticle, cartArticles[i].id)}}</div>
                     <img class="item-remove" src="../assets/icons/recycle-bin.png" (click)="removeItem(i)">
                 </div>
                     <div class="item-variant">Selected Variant Name</div>

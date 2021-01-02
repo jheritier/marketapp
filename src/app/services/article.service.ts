@@ -172,8 +172,9 @@ export class ArticleService{
          
     }
 
-    getArticleParent(articleid){
-        return this.IArticle.find(articleparent => articleparent.id === articleid)
+    getArticleParent(articleparentid){
+        this.article = this.IArticle.find(id => id.id == articleparentid);
+        return this.article;
     }
 
     getArticleById(articleid){
