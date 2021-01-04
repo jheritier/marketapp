@@ -35,7 +35,11 @@ export class CheckoutComponent implements OnInit {
   itemInCart = 0 ;
   parentname;
 
-  constructor(private dateAdapter: DateAdapter<Date>, private cartService: CartService, private articleService: ArticleService ) {
+  constructor(
+    private dateAdapter: DateAdapter<Date>, 
+    private cartService: CartService, 
+    private articleService: ArticleService,
+  ) {
     this.dateAdapter.setLocale('FR-CH'); 
   }
 
@@ -84,6 +88,16 @@ export class CheckoutComponent implements OnInit {
     return this.parentname.name;
   }
 
+  getVariant(articleparentid, articleid){
+    if(articleparentid == ""){
+      return this.articleService.getArticleById(articleid).variants.values;
+    }else{
+      return this.articleService.getVariantName(articleparentid,articleid);
+    }
+    
+     
+  }
+
 
   showCart(){
     this.hideCart = true;
@@ -106,16 +120,31 @@ export class CheckoutComponent implements OnInit {
   }
 
   onItemChange(value){
-    console.log(" Value is : ", value );
 
     if(value == "deliveryByTransporter"){
       this.deliveryByTransporter = true;
+      this.getCart();
       this.cartAmount += this.deliveryByTransporterAmount;
     }
     else{
       this.deliveryByTransporter = false;
-      this.cartAmount -= this.deliveryByTransporterAmount;
+      this.getCart();
     }
- }
+  }
+
+  quantityP(i){
+    this.cartArticles[i].quantity++;
+    
+    this.getCart();
+  }
+
+  quantityM(i){
+    this.cartArticles[i].quantity--;
+    if(this.cartArticles[i].quantity < 1){
+      this.cartArticles[i].quantity = 0;
+    }
+    
+    this.getCart();
+  }
 
 }

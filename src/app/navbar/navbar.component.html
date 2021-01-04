@@ -6,18 +6,14 @@
                 <div class="filter nav-item" (click)="showDetails()"><img src="../assets/icons/filter.png" class="nav-icons"></div>
                 <div class="cart nav-item" routerLink="checkout">
                     <img src="../assets/icons/wine.png" class="nav-icons">
-                    <div class="cart-quantity" *ngIf="cartquantity > 0">{{cartquantity}}</div>
+                    <div class="cart-quantity" *ngIf="cartService.currentCart.articles.length > 0">{{cartService.currentCart.articles.length}}</div>
                 </div>
             </div>
     </div>
     <div class="filter-list" *ngIf="hideContent">
         <label>Catégories</label>
-            <select class="form-control drop">
-                <option >Tous les produits</option>
-                <option>Vins blancs</option>
-                <option>Vins rouges</option>
-                <option>Vins rosés</option>
-                <option>Fûts de chêne</option>
+            <select class="form-control drop" [(ngModel)]="selectedCategory">
+                <option *ngFor="let c of category">{{c.name}}</option>
             </select>
     </div>
 </header>

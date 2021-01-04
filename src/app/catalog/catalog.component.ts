@@ -12,7 +12,9 @@ export class CatalogComponent implements OnInit {
 
   articles : Article[] = [];
   
-  constructor(private articleService: ArticleService) { };
+  constructor(
+    private articleService: ArticleService,
+  ) { };
 
   ngOnInit(): void {
     this.articles = this.articleService.getArticleWithoutVariant();

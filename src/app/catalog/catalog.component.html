@@ -2,6 +2,6 @@
     <div class="product-item" *ngFor="let article of articles" [routerLink]="['/article-details', article.id]">
         <img src="../assets/img/gamay.jpg" class="product-img">
         <div class="product-content">{{article.name}}</div>
-        <div class="product-price">{{article.price}}</div>
+        <div class="product-price">{{article.price}}.-</div>
     </div>
 </div>

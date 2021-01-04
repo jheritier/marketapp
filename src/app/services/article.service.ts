@@ -167,6 +167,10 @@ export class ArticleService{
         return this.IArticle;
     }
 
+    getArticleByCategory(selectedCategory){
+        return this.IArticle.filter(category => category.category == selectedCategory);
+    }
+
     getArticleWithoutVariant(){
         return this.IArticle.filter(variant => variant.isVariant !== true);
          
@@ -181,5 +185,13 @@ export class ArticleService{
         this.article = this.IArticle.find(id => id.id == articleid);
 
         return this.article;
+    }
+
+    getVariantName(articleparentid, articleid){
+        this.article = this.IArticle.find(id => id.id == articleparentid);
+
+        let index = this.article.variantArticles.findIndex(x => x.article == articleid);
+        
+        return this.article.variants.values[index];
     }
 }

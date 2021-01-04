@@ -7,12 +7,12 @@
                     <div class="item-name">{{getParentName(cartArticles[i].parentArticle, cartArticles[i].id)}}</div>
                     <img class="item-remove" src="../assets/icons/recycle-bin.png" (click)="removeItem(i)">
                 </div>
-                    <div class="item-variant">Selected Variant Name</div>
+                    <div class="item-variant">{{getVariant(cartArticles[i].parentArticle, cartArticles[i].id)}}</div>
                 <div class="item-row">
                     <div class="quantityChooser">
-                        <div class="quantityM-left">-</div>
+                        <div class="quantityM-left" (click)="quantityM(i)">-</div>
                         <input class="quantityValue" type="text" placeholder="0" value="{{cartArticles[i].quantity}}">
-                        <span class="quantityM-right">+</span>
+                        <span class="quantityM-right" (click)="quantityP(i)">+</span>
                     </div>
                     <div class="item-totalprice">{{(cartArticles[i].price * cartArticles[i].quantity)}}.-</div>
                 </div>

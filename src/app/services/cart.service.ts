@@ -48,6 +48,7 @@ export class CartService{
     }
 
     getCart(){
+        this.updateTotalAmount();
         return this.currentCart;
     }
         
